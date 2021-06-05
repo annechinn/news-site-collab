@@ -12,7 +12,7 @@
   // sample call
   // filterNumbers ([1, 2, 3, 4], 3); should return [1, 2]
   
-  
+
   
   // Exercise #2
   // write a function named smallestNumberInArray that accepts an array and 
