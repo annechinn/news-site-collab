@@ -31,9 +31,7 @@ a {
 }
 
 @media screen and (min-width: 600px) {
-  .articles {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+
 }
 
 .articles > article {
