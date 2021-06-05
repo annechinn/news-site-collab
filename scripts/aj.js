@@ -70,7 +70,7 @@
   
   // testFilterNumbers();
   // testsmallestNumberInArray();
-  //testSumNumbersInArray();
+  testSumNumbersInArray();
   
   
   
