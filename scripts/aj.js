@@ -56,7 +56,11 @@
   // you need to iterate through the array and add each number in the
   // array to a total. the total will be the return value of the function.
   
-  
+  function sumNumbersInArray(array){
+    let total = 0;
+    array.forEach(next=>total+=next);
+    return total;
+  }
   /************************ Test Code ***************************/
   
   // comment in the test functions at the point when you have written
@@ -66,7 +70,7 @@
   
   // testFilterNumbers();
   // testsmallestNumberInArray();
-  // testSumNumbersInArray();
+  //testSumNumbersInArray();
   
   
   
