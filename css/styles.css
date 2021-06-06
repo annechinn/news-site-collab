@@ -31,7 +31,6 @@ a {
 }
 
 @media screen and (min-width: 600px) {
-
 }
 
 .articles > article {
@@ -40,7 +39,7 @@ a {
 }
 
 .category {
-  color: black;
+  color: white;
   font-size: 9px;
   padding: 4px 8px;
   border-radius: 10px;
@@ -127,7 +126,6 @@ a {
 .nav-container li {
   font-weight: bold;
 }
-
 
 .footer-container {
   background-color: var(--dark-color);
