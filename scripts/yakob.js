@@ -12,7 +12,15 @@
   // sample call
   // filterNumbers ([1, 2, 3, 4], 3); should return [1, 2]
   
-  
+  function filterNumbers(array, number){
+    let result = [];
+    for (let i=0; i<array.length;++i) {
+      if (array[i]<number) {
+        result.push(array[i]);
+      }
+    }
+    return result;
+  }
   
   // Exercise #2
   // write a function named smallestNumberInArray that accepts an array and 
@@ -41,7 +49,15 @@
   // sure there was at least one element to avoid an error condition, but we'll say that
   // the input data is guaranteed to contain at least one element.
   
-  
+  function smallestNumberInArray (array){
+    let smallestNumber = Number.MAX_SAFE_INTEGER;
+    for (i=0;i<array.length;i++){
+      if(array[i]<smallestNumber){
+        smallestNumber = array[i];
+      }
+    }
+    return smallestNumber;
+  }
   // Exercise #3
   // write a function named sumNumbersInArray that accepts an array and
   // returns a number that equals the sum of all of the numbers in the array.
@@ -68,8 +84,8 @@
   // in the console log
   //
   
-  // testFilterNumbers();
-  // testsmallestNumberInArray();
+   testFilterNumbers();
+   testsmallestNumberInArray();
   testSumNumbersInArray();
   
   
