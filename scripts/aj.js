@@ -12,8 +12,22 @@
   // sample call
   // filterNumbers ([1, 2, 3, 4], 3); should return [1, 2]
   
+  let array = [1,2,3,4,5];
+  let array2 = [6,7,8,9,10];
 
-  
+
+ function filterNumbers(numbers,number){
+  let newArray = [];   
+  numbers.forEach(x => {
+    if (x < number){
+      newArray.push(x)
+    }
+   });
+    return newArray
+ }
+// let answer = filterNumbers(array, 5);
+// console.log(answer)
+
   // Exercise #2
   // write a function named smallestNumberInArray that accepts an array and 
   // returns a number that equals the smallest number in the array.
@@ -41,6 +55,20 @@
   // sure there was at least one element to avoid an error condition, but we'll say that
   // the input data is guaranteed to contain at least one element.
   
+  let array = [1, 2, 3, 4, 5];
+  
+  function smallestNumberInArray(arr){
+    let smallNumber = arr[0]
+    arr.forEach(x => {
+      
+      if(x < smallNumber){
+        smallNumber = x; 
+      } 
+    });
+    return smallNumber
+  }
+  console.log(array)
+  // if you already know how to do 
   
   // Exercise #3
   // write a function named sumNumbersInArray that accepts an array and
@@ -68,9 +96,9 @@
   // in the console log
   //
   
-  // testFilterNumbers();
-  // testsmallestNumberInArray();
-  testSumNumbersInArray();
+   testFilterNumbers();
+   testsmallestNumberInArray();
+   testSumNumbersInArray();
   
   
   
