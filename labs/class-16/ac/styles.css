@@ -1,7 +1,11 @@
 
 body {
-  padding:40px;
+  padding:100px;
   background-color:lightgrey !important;
+}
+
+#form {
+  display:none;
 }
 
 .buttons {
@@ -13,4 +17,8 @@ body {
   display:grid;
   grid-template-columns: 1fr 1fr;
   grid-gap:16px;
+}
+
+label {
+  font-weight:bold;
 }
