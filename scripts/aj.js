@@ -55,7 +55,7 @@
   // sure there was at least one element to avoid an error condition, but we'll say that
   // the input data is guaranteed to contain at least one element.
   
-  let array = [1, 2, 3, 4, 5];
+   array = [1, 2, 3, 4, 5];
   
   function smallestNumberInArray(arr){
     let smallNumber = arr[0]
