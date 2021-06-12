@@ -85,39 +85,7 @@
   // array to a total. the total will be the return value of the function.
   
   function sumNumbersInArray(array){
-    let total = 0;
-    array.forEach(next=>total+=next);
-    return total;
-  }
-  /************************ Test Code ***************************/
-  
-  // comment in the test functions at the point when you have written
-  // the function enough to want to start testing it and see the output
-  // in the console log
-  //
-  
-   testFilterNumbers();
-   testsmallestNumberInArray();
-   testSumNumbersInArray();
-  
-  
-  
-  function testSumNumbersInArray() { 
-    if (sumNumbersInArray([1, 2, 3, 4]) === 10) {
-      console.log('%c sumNumbersInArray: PASS', 'color: green');
-    } else {
-      console.log('%c sumNumbersInArray: FAIL', 'color: red');
-    }
-  
-    if (sumNumbersInArray([10, 0, 3, 4]) === 17) {
-      console.log('%c sumNumbersInArray: PASS', 'color: green');
-    } else {
-      console.log('%c sumNumbersInArray: FAIL', 'color: red');
-    }
-  
-    if (sumNumbersInArray([]) === 0) {
-      console.log('%c sumNumbersInArray: PASS', 'color: green');
-    } else {
+    let total = 0;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
       console.log('%c sumNumbersInArray: FAIL', 'color: red');
     }
   
