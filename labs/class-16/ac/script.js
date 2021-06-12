@@ -10,7 +10,6 @@ function getHTMLForAnimal(animal) {
       </div>
   `;
   }
-
  
 
   function initLionButton() {
@@ -30,6 +29,8 @@ function getHTMLForAnimal(animal) {
       // that represents the button with id='lion-link'.
       // use the document.getElementById method to retrieve it.
       // https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+
+      let button = document.getElementById('lion-link');
       
       // step 2: create an event-handler for when the button 
       // in step 1 is clicked. 
@@ -38,6 +39,15 @@ function getHTMLForAnimal(animal) {
       // https://www.w3schools.com/jsref/met_document_addeventlistener.asp
       
 
+      button.addEventListener("click", ()=> {
+
+        let animal = zoo.animals.find(x=>x.showcase);
+
+        let div = document.getElementById('main-content');
+
+        div.innerHTML = getHTMLForAnimal(animal);
+      });
+      
       // within the body of the event handler....
 
       // step 3: create a variable to hold the animal
@@ -56,15 +66,7 @@ function getHTMLForAnimal(animal) {
       // these modifications should result in the main-content div being
       // update to contain the HTML for the specific animal.
 
-    let button = document.getElementById(`lion-link`);
 
-    button.addEventListener("click", () => {
-
-      let div = document.getElementById('main-content');
-      let animal = zoo.animals.find(x=>x.showcase);
-      div.innerHTML = getHTMLForAnimal(animal);
-
-    });
   }
 
   initLionButton();
