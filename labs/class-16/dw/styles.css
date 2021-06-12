@@ -1,0 +1,19 @@
+body {
+    padding:100px;
+    background-color:lightgrey !important;
+  }
+  
+  #form {
+    display:none;
+  }
+  
+  .buttons {
+    margin-bottom:20px;
+  }
+  
+  .animals {
+    margin-top:20px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:16px;
+  }
