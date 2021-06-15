@@ -113,6 +113,7 @@ a {
 .nav-container ul {
   display: flex;
   flex-direction: column;
+  list-style-type: none;
 }
 
 .nav-container li a:hover {
