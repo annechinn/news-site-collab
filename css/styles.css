@@ -115,6 +115,11 @@ a {
   flex-direction: column;
 }
 
+.nav-container li a:hover {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
 /* style for larger widths */
 @media screen and (min-width: 600px) {
   .nav-container ul {
