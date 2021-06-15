@@ -69,9 +69,9 @@ a {
   background: url("../images/robot.jpg") center/cover;
 }
 
-.showcase.food {
+/* .showcase.food {
   background: url("../images/french-toast.jpg") center/cover;
-}
+} */
 
 @media screen and (min-width: 600px) {
   .showcase p {
