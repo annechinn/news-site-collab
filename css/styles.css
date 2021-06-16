@@ -32,7 +32,10 @@ a {
 }
 
 @media screen and (min-width: 600px) {
-
+  .articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .articles > article {
@@ -71,9 +74,9 @@ a {
   background: url("../images/robot.jpg") center/cover;
 }
 
-.showcase.food {
+/* .showcase.food {
   background: url("../images/french-toast.jpg") center/cover;
-}
+} */
 
 @media screen and (min-width: 600px) {
   .showcase p {
@@ -115,6 +118,12 @@ a {
 .nav-container ul {
   display: flex;
   flex-direction: column;
+  list-style-type: none;
+}
+
+.nav-container li a:hover {
+  font-weight: bold;
+  color: var(--primary-color);
 }
 
 /* style for larger widths */
