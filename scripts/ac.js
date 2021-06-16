@@ -1,20 +1,18 @@
 (()=> {
 
-  
-  function evenOrOdd(numbers) {
+  // 01 - Convert the following for loop to a forEach call on the array
 
-    let result = [];
+  // Create the array
+  const flavors = ['chocolate', 'ginger', 'carrot', 'coffee', 'walnut', 'banana'];
 
-    numbers.forEach(x=>{
-      if (x%2===0) result.push("even");
-      else result.push("odd");
-    });
-
-    return result;
-   
+  // Create the for loop
+  for (let i = 0; i < flavors.length; i++) {
+    console.log('I like ' + flavors[i] + ' cake');
   }
 
-  console.log(evenOrOdd([0, 1, 2, 3, 5]));
+
+
+  
    
   
   })();

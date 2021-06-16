@@ -28,6 +28,7 @@ a {
 .articles {
   display: grid;
   grid-template-columns: 1fr;
+  
 }
 
 @media screen and (min-width: 600px) {
@@ -47,6 +48,7 @@ a {
   font-size: 9px;
   padding: 4px 8px;
   border-radius: 10px;
+  
 }
 
 .category-sports {

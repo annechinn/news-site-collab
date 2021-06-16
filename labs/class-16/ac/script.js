@@ -1,71 +1,95 @@
 
 function getHTMLForAnimal(animal) {
-    return `
-      <div class="card">
-        <img src="${animal.imageURL}" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">${animal.name}</h5>
-          <p class="card-text">sex: ${animal.sex} age: ${animal.age}</p>
-        </div>
+  return `
+    <div class="card">
+      <img src="${animal.imageURL}" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">${animal.name}</h5>
+        <p class="card-text">sex: ${animal.sex} age: ${animal.age}</p>
       </div>
+    </div>
+`;
+}
+
+function getHTMLForAnimalType(animalType) {
+
+  let animals = zoo.animals.filter(x=>x.typeId===animalType.id);
+
+  let caretaker = zoo.caretakers.find(x=>x.id===animalType.caretakerId);
+
+  let animalsHTML = "";
+
+  animals.forEach(x=>{
+    // <h3>Zena age: 15 sex: female</h3><h3>Max age: 15 sex: female</h3> 
+    animalsHTML+=getHTMLForAnimal(x);
+  });
+
+  return `
+    <h1>${animalType.name} - ${animals.length}</h1>
+    <h3>Location: ${animalType.location}</h3>
+    <h3>Caretaker: ${caretaker.firstName} ${caretaker.lastName}</h3>
+
+    <div class="animals">
+    ${animalsHTML}
+    </div>
   `;
-  }
+}
 
- 
+function initAnimalType(animalType) {
 
-  function initLionButton() {
+  //console.log("initAnimalType", animalType);
 
-     // each animal object has the following properties
-      // 
-      // {
-      //   name: "Zena",
-      //   sex: "female",
-      //   imageURL: "https://images.unspl....",
-      //   age: 12,
-      //   showcase: false,
-      //   typeId: 1, // lion
-      // }
+  const id = `${animalType.name}-link`;
+  let button = document.getElementById(id);
 
-      // step 1: create a variable to hold the DOM element
-      // that represents the button with id='lion-link'.
-      // use the document.getElementById method to retrieve it.
-      // https://www.w3schools.com/jsref/met_document_getelementbyid.asp
-      
-      // step 2: create an event-handler for when the button 
-      // in step 1 is clicked. 
-      // use the Element.addEventLister method to register the
-      // event handler.
-      // https://www.w3schools.com/jsref/met_document_addeventlistener.asp
-      
+  button.addEventListener("click", ()=> {
+    let div = document.getElementById('main-content');
 
-      // within the body of the event handler....
+    let animals = zoo.animals.filter(x=>x.typeId===animalType.id);
+  
+    // console.log(animals);
+    // console.log(animals.map(x=>x.name));
+    // console.log(animals.map(x=>x.name).join(", "));
+    let animalNames = animals.map(x=>x.name).join(", ");
+  
+    let question = `What ${animalType.name} do you want to see? ${animalNames}`;
+    let animalName = window.prompt(question, "all");
+  
+    if (animalName === 'all') {
+      div.innerHTML = getHTMLForAnimalType(animalType);
+    }
+    else {
+      let animal = animals.find(x=>x.name===animalName);
+      if (animal===undefined) {
+        window.alert("Unknown animal, showing all..");
+        div.innerHTML = getHTMLForAnimalType(animalType);
+      }
+      else {
+        div.innerHTML = getHTMLForAnimal(animal);
+      }
+    }
 
-      // step 3: create a variable to hold the animal
-      // that has the property showcase: true. 
-      // use the Array.find method to find it.
-      // https://www.w3schools.com/jsref/jsref_find.asp
+  });
 
-      // step 4: create a variable to hold the DOM element
-      // that represents the div with the id='main-content'.
-      // use the document.getElementById method to retrieve it.
-      // https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+}
 
-      // step 5: assign the innerHTML of the variable returned in step 3
-      // the value returned from calling the function getHTMLForAnimal.
-      
-      // these modifications should result in the main-content div being
-      // update to contain the HTML for the specific animal.
+function showShowcaseAnimal() {
+  let div = document.getElementById('main-content');
+  let animal = zoo.animals.find(x=>x.showcase);
+  div.innerHTML = getHTMLForAnimal(animal);
+}
 
-    let button = document.getElementById(`lion-link`);
+function initHomeButton() {
+  let button = document.getElementById('home-link');
+  button.addEventListener('click', ()=> {
+    showShowcaseAnimal();
+  });
+}
 
-    button.addEventListener("click", () => {
+function initButtons() {
+  zoo.animalTypes.forEach(x=>initAnimalType(x));
+}
 
-      let div = document.getElementById('main-content');
-      let animal = zoo.animals.find(x=>x.showcase);
-      div.innerHTML = getHTMLForAnimal(animal);
-
-    });
-  }
-
-  initLionButton();
+initButtons();
+initHomeButton();
 

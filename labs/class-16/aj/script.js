@@ -1,3 +1,4 @@
+
 function getHTMLForAnimal(animal) {
   return `
        <div class="card">
