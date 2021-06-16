@@ -34,27 +34,23 @@ function getHTMLForAnimalType(animalType) {
     </div>
   `;
 }
- 
-// {
-//   id: 1,
-//   name: 'lion',
-//   location: 'NE',
-//   caretakerId: 1, // Nigel
-// }
-// Template Literal/ String Literal
 
 function initAnimalType(animalType) {
 
-  console.log("initAnimalType", animalType);
+  //console.log("initAnimalType", animalType);
 
   const id = `${animalType.name}-link`;
   let button = document.getElementById(id);
 
   button.addEventListener("click", ()=> {
     let div = document.getElementById('main-content');
-    let animals = zoo.animals.filter(x=>x.typeId===animalType.id);
 
-    let animalNames = animals.map(x=>x.name).join(" ");
+    let animals = zoo.animals.filter(x=>x.typeId===animalType.id);
+  
+    // console.log(animals);
+    // console.log(animals.map(x=>x.name));
+    // console.log(animals.map(x=>x.name).join(", "));
+    let animalNames = animals.map(x=>x.name).join(", ");
   
     let question = `What ${animalType.name} do you want to see? ${animalNames}`;
     let animalName = window.prompt(question, "all");
@@ -65,7 +61,7 @@ function initAnimalType(animalType) {
     else {
       let animal = animals.find(x=>x.name===animalName);
       if (animal===undefined) {
-        alert("Unknown animal, showing all..");
+        window.alert("Unknown animal, showing all..");
         div.innerHTML = getHTMLForAnimalType(animalType);
       }
       else {
@@ -77,33 +73,23 @@ function initAnimalType(animalType) {
 
 }
 
+function showShowcaseAnimal() {
+  let div = document.getElementById('main-content');
+  let animal = zoo.animals.find(x=>x.showcase);
+  div.innerHTML = getHTMLForAnimal(animal);
+}
+
+function initHomeButton() {
+  let button = document.getElementById('home-link');
+  button.addEventListener('click', ()=> {
+    showShowcaseAnimal();
+  });
+}
+
 function initButtons() {
   zoo.animalTypes.forEach(x=>initAnimalType(x));
 }
 
 initButtons();
+initHomeButton();
 
-
- // animalType
-    // {
-    //   id: 1,
-    //   name: 'lion',
-    //   location: 'NE',
-    //   caretakerId: 1, // Nigel
-    // }
-    // animal
-    // {
-    //   name: "Zena",
-    //   sex: "female",
-    //   imageURL: "https://images.unsplash.com/photo-1571835782488-1793036d8887?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTI3fHxsaW9ufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
-    //   age: 12,
-    //   showcase: false,
-    //   typeId: 1, // lion
-    // },
-    // caretaker
-    // {
-    //   id: 1,
-    //   firstName: "Nigel",
-    //   lastName: "Nelson",
-    //   imageURL: "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTYyfHxwcm9maWxlJTIwcGhvdG98ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
-    // },
