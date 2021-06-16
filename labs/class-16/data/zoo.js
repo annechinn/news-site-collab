@@ -1,4 +1,9 @@
 zoo = {
+  prices: { 
+    adult: 49.99, 
+    senior: 24.99, 
+    child: 20.99 
+  },
   caretakers: [
     {
       id: 1,
