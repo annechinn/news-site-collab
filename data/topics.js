@@ -1,7 +1,7 @@
 const topicsData = [
     { 
       id: 1,
-      name: 'tech',
+      name: 'technology',
       color: '#009cff', 
       title: 'Technology',
       showcaseArticleId: 16
