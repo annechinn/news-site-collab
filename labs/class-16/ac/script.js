@@ -61,10 +61,26 @@ function showShowcaseAnimal() {
   updateMainContent(getHTMLForAnimal(animal));
 }
 
+function getHTMLForSummaryTable() {
+
+}
+
+function showSummaryTable() {
+  let element = document.getElementById('main-content');
+  element.innerHTML = getHTMLForSummaryTable();
+}
+
 function initHomeButton() {
   let button = document.getElementById('home-link');
   button.addEventListener('click', ()=> {
     showShowcaseAnimal();
+  });
+}
+
+function initSummaryButton() {
+  let button = document.getElementById('summary-link');
+  button.addEventListener('click', ()=> {
+    showSummaryTable();
   });
 }
 
@@ -74,4 +90,5 @@ function initAnimalButtons() {
 
 initAnimalButtons();
 initHomeButton();
+initSummaryButton();
 
