@@ -8,10 +8,12 @@ const flavors = ['chocolate', 'ginger', 'carrot', 'coffee', 'walnut', 'banana'];
 
 // Create the for loop
 for (let i = 0; i < flavors.length; i++) {
-  console.log(`I like ${flavors[i]} cake`);
-}
+  console.log('I like ' + flavors[i] + ' cake');
 
-flavors.forEach(flavor => console.log(`I like ${flavor} cake`));
+  flavors.forEach(x=>console.log('i like `${flavors}` cake') 
+    
+  
+}
 
 
 
@@ -99,6 +101,43 @@ people = [{
 }];
 
 people.filter(p=>p.first_name.length<4)
+
+
+data = [
+  {
+    name: 'Butters',
+    age: 3,
+    type: 'dog'
+  },
+  {
+    name: 'Lizzy',
+    age: 6,
+    type: 'dog'
+  },
+  {
+    name: 'Red',
+    age: 1,
+    type: 'cat'
+  },
+  {
+    name: 'Joey',
+    age: 3,
+    type: 'dog'
+  }
+];
+
+// sum all of the dogs ages in dog years.
+//  select only the dogs
+//  translate each age into dog years (multiply them by seven)
+//  sum the ages
+  
+function getAges(data) {
+    let sum = 0;
+    for (i=0;i<Array.length;i++)
+    return sum;
+}
+
+console.log(getAges(data)); // returns 84;
 
 
 
