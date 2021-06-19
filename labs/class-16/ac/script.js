@@ -61,8 +61,68 @@ function showShowcaseAnimal() {
   updateMainContent(getHTMLForAnimal(animal));
 }
 
-function getHTMLForSummaryTable() {
+// animalType
+// {
+//   id: 1,
+//   name: 'lion',
+//   location: 'NE',
+//   caretakerId: 1, // Nigel
+// }
 
+// animal
+// {
+//   name: "Zena",
+//   sex: "female",
+//   imageURL: "https://images.unsplash.com/photo-1571835782488-1793036d8887?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTI3fHxsaW9ufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
+//   age: 12,
+//   showcase: false,
+//   typeId: 1, // lion
+// },
+
+function getHTMLForSummaryTableRow(animalType) {
+
+  let animals = zoo.animals.filter(x=>x.typeId===animalType.id);
+
+  console.log("animals", animals);
+  let animalsSummaryHTML = animals.map(x=>{
+    return `<strong>${x.name}</strong> (${x.sex}, ${x.age})`;
+  });
+
+  console.log("animalsSummaryHTML", animalsSummaryHTML);
+  animalsSummaryHTML = animalsSummaryHTML.join("");
+
+  console.log("animalsSummaryHTML after join", animalsSummaryHTML);
+
+ return `
+  <tr>
+    <td>${animalType.name}</td>
+    <td>${animalType.location}</td>
+    <td>${animals.length}</td>
+    <td>${animalsSummaryHTML}</td>
+  </tr>
+ `;
+}
+
+function getHTMLForSummaryTable() {
+  let animalTypes = zoo.animalTypes;
+  let summaryRows = animalTypes.map(animalType =>getHTMLForSummaryTableRow(animalType));
+  let rowsHTML = summaryRows.join(" ");
+
+  let html = `
+    <table class="table table-striped">
+      <thead>
+        <th>Type</th>
+        <th>Location</th>
+        <th>Number</th>
+        <th>Residents</th>
+      </thead>
+      <tbody>
+        ${rowsHTML}
+      </tbody>
+    </table>
+  `;
+
+  return html;
 }
 
 function showSummaryTable() {

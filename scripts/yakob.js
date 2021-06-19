@@ -1,13 +1,31 @@
-(()=> {
+(() => {
 
-  // 01 - Convert the following for loop to a forEach call on the array
 
-// Create the array
-const flavors = ['chocolate', 'ginger', 'carrot', 'coffee', 'walnut', 'banana'];
 
-// Create the for loop
-for (let i = 0; i < flavors.length; i++) {
-  console.log('I like ' + flavors[i] + ' cake');
-}
-  
-  })();
+  function mapIt(current) {
+      let message = 'massage';
+    switch (current) {
+        case "green":
+          message = "yellow";
+          break;
+        case "yellow":
+          message = "red";
+          break;
+        case "red":
+          message = "green";
+          break;
+        
+        
+    }
+    return message;
+  }
+
+ 
+  console.log(mapIt("green")); // "yellow"
+  console.log(mapIt("yellow")); // "red"
+  console.log(mapIt("red")); // "green"})();
+
+
+
+
+})();
