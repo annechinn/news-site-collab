@@ -97,5 +97,52 @@ function initShowHomeButton() {
     showHome()
   })
 }
+
+
+function getHTMLForSummaryTable(){
+let animalTypes = zoo.animalTypes
+let summaryRows = animalTypes.map(animalTYpe=> getHTMLForSummaryRow(animalType))
+let rowsHTML = summaryRows.join("")
+}
+
+
+function getHMTLForSummaryTableRow(animalType){
+  let animal = zoo.animals.filter(x=> x.typeId === animalType.id)
+
+  let animalsSummaryHTML = animals.map(x => {
+    return `
+    <strong>${x.name}</strong>, ${x.sex}, ${x.age}
+    `
+  }).join("")
+
+  return `
+  <tr>
+    <td>${animalType.name}</td>
+    <td>${animalType.location}</td>
+    <td>${animals.length}</td>
+    <td>${animalsSummaryHTML}</td>
+  </tr>
+
+  `
+}
+
+function showSummaryTable(){
+  let button = document.getElementById('main-content');
+  element.innerHTML = getHTMLForSummaryTable
+}
+
+function initSummaryButton() {
+  let home = document.getElementById('summary-link')
+  home.addEventListener('click', (event) => {
+    showHome()
+  })
+}
+
+
+let rowsHTML = zoo.animalTypes
+.map(animalType => getHTMLForSummaryTable).join("");
+
+
 initShowHomeButton()
 showHome()
+initSummaryButton()
