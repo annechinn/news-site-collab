@@ -10,6 +10,7 @@ function getHTMLForAnimal(animal) {
 `;
 }
 
+
 function getHTMLForAnimalType(animalType){
   let animals = zoo.animals.filter(x=>x.typeId===animalType.id);
   let caretaker = zoo.caretakers.find(x=>x.id===animalType.caretakerId);
@@ -29,6 +30,8 @@ function getHTMLForAnimalType(animalType){
     `;
 
 } 
+
+
 // {
 //   id: 1,
 //   name: 'lion',
