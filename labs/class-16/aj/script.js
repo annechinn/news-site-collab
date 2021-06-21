@@ -2,18 +2,10 @@
 function getHTMLForAnimal(animal) {
   return `
        <div class="card">
-              <img src="${
-    animal.imageURL
-  }" class="card-img-top">
+              <img src="${animal.imageURL}" class="card-img-top">
               <div class="card-body">
-                     <h5 class="card-title">${
-    animal.name
-  }</h5>
-                     <p class="card-text">sex: ${
-    animal.sex
-  } age: ${
-    animal.age
-  }</p>
+                     <h5 class="card-title">${animal.name }</h5>
+                     <p class="card-text">sex: ${animal.sex} age: ${animal.age }</p>
                </div>
        </div>
            `;
