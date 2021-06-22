@@ -6,6 +6,7 @@ const {port} = require('./config');
 require('./models/User');
 require('./models/Article');
 require('./models/Comment');
+require('./models/Topic');
 
 const app = express();
 
@@ -18,6 +19,7 @@ connectDB();
 
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/articles', require('./routes/api/articles'));
+app.use('/api/topics', require('./routes/api/topics'));
 
 app.listen(port, ()=> {
   console.log(`Server started on port ${port}`);

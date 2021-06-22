@@ -1,37 +1,231 @@
-GET http://localhost:5000/api/users/60d17eea13f69b62ec945076
+
+GET http://localhost:5000/api/topics
 
 ###
 
+GET http://localhost:5000/api/articles
+
+###
+
+GET http://localhost:5000/api/articles/60d24ffdb4f2084cb4ee9510
+
+###
+
+POST http://localhost:5000/api/topics
+Content-Type: application/json
+
+{
+  "name": "tech",
+  "title": "Technology",
+  "color": "#009cff"
+}
+
+###
+
+POST http://localhost:5000/api/topics
+Content-Type: application/json
+
+{
+  "name": "science",
+  "title": "Science",
+  "color": "#3bd142"
+}
+
+###
+
+POST http://localhost:5000/api/topics
+Content-Type: application/json
+
+{
+  "name": "food",
+  "title": "Food",
+  "color": "#d1483b"
+}
+
+###
+
+POST http://localhost:5000/api/topics
+Content-Type: application/json
+
+{
+  "name": "arts",
+  "title": "Arts",
+  "color": "#a66bbe"
+}
+
+###
+
+POST http://localhost:5000/api/topics
+Content-Type: application/json
+
+{
+  "name": "sports",
+  "title": "Sports",
+  "color": "#f99500"
+}
+
+
+###
 POST http://localhost:5000/api/users
 Content-Type: application/json
 
 {
-  "username": "annechinn",
-  "email": "achinn@nwlink.com"
+  "username": "sallysmith",
+  "email": "ss@gmail.com",
+  "firstName": "Sally",
+  "lastName": "Smith",
+  "imageURL": "https://images.unsplash.com/photo-1579591919791-0e3737ae3808?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=658&q=80"
 }
-###
 
-GET http://localhost:5000/api/articles/60d21d12dceeb81f24c3b475
+###
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+  "username": "joejones",
+  "email": "jj@gmail.com",
+  "firstName": "Joe",
+  "lastName": "Jones",
+  "imageURL": "https://images.unsplash.com/photo-1598198414976-ddb788ec80c1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=626&q=80"
+}
 
 ###
 POST http://localhost:5000/api/articles
 Content-Type: application/json
 
 {
-  "title": "Jellyfish",
-  "abstract": "An Article about Jellyfish",
-  "imageURL": "https://images.unsplash.com/photo-1508311603478-ce574376c3cf?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8amVsbHlmaXNofGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  "authorId": "60d17eea13f69b62ec945076"
+  "title": "Article 1",
+  "abstract": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "imageURL": "https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "authorId": "60d24aeaeacbc4390430134c",
+  "topicId": "60d24e9cb4f2084cb4ee9506"
+}
+
+###
+POST http://localhost:5000/api/articles
+Content-Type: application/json
+
+{
+  "title": "Article 2",
+  "abstract": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "imageURL": "https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "authorId": "60d24aeaeacbc4390430134c",
+  "topicId": "60d24e9cb4f2084cb4ee9506"
+}
+
+###
+POST http://localhost:5000/api/articles
+Content-Type: application/json
+
+{
+  "title": "Article 3",
+  "abstract": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "imageURL": "https://images.pexels.com/photos/6529912/pexels-photo-6529912.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "authorId": "60d24b25eacbc4390430134e",
+  "topicId": "60d24eb4b4f2084cb4ee9508" 
+}
+
+###
+POST http://localhost:5000/api/articles
+Content-Type: application/json
+
+{
+  "title": "Article 4",
+  "abstract": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "imageURL": "https://images.pexels.com/photos/3735709/pexels-photo-3735709.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "authorId": "60d24b25eacbc4390430134e",
+  "topicId": "60d24e9cb4f2084cb4ee9506" 
+}
+
+###
+POST http://localhost:5000/api/articles
+Content-Type: application/json
+
+{
+  "title": "Article 5",
+  "abstract": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "imageURL": "https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "authorId": "60d24b25eacbc4390430134e",
+  "topicId": "60d24eecb4f2084cb4ee950c" 
+}
+
+###
+POST http://localhost:5000/api/articles
+Content-Type: application/json
+
+{
+  "title": "Article 6",
+  "abstract": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "imageURL": "https://images.pexels.com/photos/256189/pexels-photo-256189.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "authorId": "60d24b25eacbc4390430134e",
+  "topicId": "60d24ed6b4f2084cb4ee950a" 
+}
+
+###
+POST http://localhost:5000/api/articles
+Content-Type: application/json
+
+{
+  "title": "Article 7",
+  "abstract": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "imageURL": "https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "authorId": "60d24b25eacbc4390430134e",
+  "topicId": "60d24eb4b4f2084cb4ee9508" 
+}
+
+###
+POST http://localhost:5000/api/articles
+Content-Type: application/json
+
+{
+  "title": "Article 8",
+  "abstract": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "imageURL": "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=5000",
+  "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "authorId": "60d24b25eacbc4390430134e",
+  "topicId": "60d24eb4b4f2084cb4ee9508" 
+}
+
+###
+POST http://localhost:5000/api/articles
+Content-Type: application/json
+
+{
+  "title": "Article 9",
+  "abstract": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "imageURL": "https://images.pexels.com/photos/853006/pexels-photo-853006.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=50",
+  "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
+  "authorId": "60d24b25eacbc4390430134e",
+  "topicId": "60d24eb4b4f2084cb4ee9508" 
 }
 
 ###
 
-POST http://localhost:5000/api/articles/60d21d12dceeb81f24c3b475/comments
+POST http://localhost:5000/api/articles/60d24ffdb4f2084cb4ee9510/comments
 Content-Type: application/json
 
 {
-  "authorId": "60d17eea13f69b62ec945076",
+  "authorId": "60d24aeaeacbc4390430134c",
   "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 }
 
+
+###
+
+
+POST http://localhost:5000/api/topics
+Content-Type: application/json
+
+{
+  "name": "tech",
+  "title": "Technology",
+  "color": "#009cff",
+  "articleId"
+}

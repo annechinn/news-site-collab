@@ -11,20 +11,17 @@ const UserSchema = new mongoose.Schema({
     lowercase: true, 
     required: [true, "can't be blank"],
   },
-  bio: String,
-  imageURL: String,
-}, {timestamps: true});
-
-UserSchema.statics.findByLogin = async (login) => {
-  let user = await this.findOne({
-    username: login,
-  });
- 
-  if (!user) {
-    user = await this.findOne({ email: login });
+  firstName: {
+    type: String,
+    required: [true, "can't be blank"], 
+  },
+  lastName: {
+    type: String,
+    required: [true, "can't be blank"], 
+  },
+  imageURL: {
+    type: String,
   }
- 
-  return user;
-};
+}, {timestamps: true});
 
 mongoose.model('User', UserSchema);

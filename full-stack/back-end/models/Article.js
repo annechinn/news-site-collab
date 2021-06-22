@@ -6,14 +6,9 @@ const ArticleSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId, 
       ref: 'User' 
     },
-    local: {
-      type: Boolean
-    },
-    nytURL: {
-      type: String,
-    },
-    nytURI: {
-      type: String
+    topic: { 
+      type: mongoose.Schema.Types.ObjectId, 
+      ref: 'Topic' 
     },
     title: {
       type: String,

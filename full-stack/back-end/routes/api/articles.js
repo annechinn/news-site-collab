@@ -3,6 +3,15 @@ const router = require('express').Router();
 const Article = mongoose.model('Article');
 const Comment = mongoose.model('Comment');
 
+router.get('/', async (req, res) => {
+  try {
+    const articles = await Article.find();
+    res.json(articles);
+  } catch (err) {
+    res.status(500).json({message: err.message})
+  }
+});
+
 router.get('/:articleId', getArticle, async (req, res) => {
   res.send(res.article);
 });

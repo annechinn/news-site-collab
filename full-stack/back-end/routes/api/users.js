@@ -1,3 +1,4 @@
+const { request } = require('express');
 const mongoose = require('mongoose');
 const router = require('express').Router();
 const User = mongoose.model('User');
@@ -23,9 +24,10 @@ router.put('/', async (req, res) => {
       return res.status(404).json({message: `Cannot find user with id: ${id}`});
     }
 
-    user.username = req.params.username;
-    user.email = req.params.email;
-    user.bio = req.params.bio;
+    user.username = req.body.username;
+    user.email = req.body.email;
+    user.firstName = req.body.firstName;
+    user.lastName = req.body.lastName;
     user.imageURL = req.params.imageURL;
 
     await user.save();
@@ -40,7 +42,10 @@ router.post('/', async (req, res) => {
 
   var user = new User({
     username: req.body.username,
-    email: req.body.email
+    email: req.body.email,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    imageURL: req.body.imageURL
   });
 
   try {
