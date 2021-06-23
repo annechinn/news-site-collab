@@ -10,7 +10,6 @@ let currentPlayer = O_TEXT;
 const initGame = () => {
   spaces = [null, null, null, null, null, null, null, null, null];
 
-  inPlay = true;
   boxes.forEach((box) => {
     box.innerText = "";
   });
