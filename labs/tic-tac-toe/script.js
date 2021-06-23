@@ -6,6 +6,7 @@ let spaces = [];
 const O_TEXT = "O";
 const X_TEXT = "X";
 let currentPlayer = O_TEXT;
+const test=document.getElementById("test");
 
 const initGame = () => {
   spaces = [null, null, null, null, null, null, null, null, null];
@@ -58,10 +59,10 @@ const hasPlayerWon = (player) => {
   if (threeInARow(2, 4, 6, player)) return true;
 
 
-  // from middle check middle vertical and middle horizontal
+  // from middle check middle vertical ,middle horizontal and middle diagonal which includes top right corner element
   if (threeInARow(4, 3, 5, player)) return true;
   if (threeInARow(4, 1, 7, player)) return true;
-
+  if (threeInARow(4, 2, 6, player)) return true;
   return false;
 };
 
