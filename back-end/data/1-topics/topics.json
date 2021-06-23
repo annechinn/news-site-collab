@@ -1,0 +1,32 @@
+[
+  {
+    "_id": { "$oid": "60d24e7cb4f2084cb4ee9504" },
+    "name": "tech",
+    "title": "Technology",
+    "color": "#009cff"
+  },
+  {
+    "_id": { "$oid": "60d24e9cb4f2084cb4ee9506" },
+    "name": "science",
+    "title": "Science",
+    "color": "#3bd142"
+  },
+  {
+    "_id": { "$oid": "60d24eb4b4f2084cb4ee9508" },
+    "name": "food",
+    "title": "Food",
+    "color": "#d1483b"
+  },
+  {
+    "_id": { "$oid": "60d24ed6b4f2084cb4ee950a" },
+    "name": "arts",
+    "title": "Arts",
+    "color": "#a66bbe"
+  },
+  {
+    "_id": { "$oid": "60d24eecb4f2084cb4ee950c" },
+    "name": "sports",
+    "title": "Sports",
+    "color": "#f99500"
+  }
+]
