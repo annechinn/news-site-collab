@@ -16,7 +16,7 @@ const initGame = () => {
 
   playText.innerHTML = `Let's Play!!`;
   currentPlayer = O_TEXT;
-}
+};
 
 const drawBoard = () => {
   boxes.forEach((box) => {
@@ -36,19 +36,18 @@ const drawBoard = () => {
 };
 
 const threeInARow = (first, second, third, player) => {
-  return (spaces[first]  === player && 
-          spaces[second] === player && 
-          spaces[third]  === player);
-}
+  return (
+    spaces[first] === player &&
+    spaces[second] === player &&
+    spaces[third] === player
+  );
+};
 
 const hasPlayerWon = (player) => {
   // from top left, check across, down, and diagonal
   if (threeInARow(0, 1, 2, player)) return true;
   if (threeInARow(0, 3, 6, player)) return true;
   if (threeInARow(0, 4, 8, player)) return true;
-
-   // from top right, check diagonal
-   if (threeInARow(2, 4, 6, player)) return true;
 
   // from bottom check up and across
   if (threeInARow(8, 2, 5, player)) return true;
