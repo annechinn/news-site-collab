@@ -9,6 +9,7 @@ let currentPlayer = O_TEXT;
 
 const initGame = () => {
   spaces = [null, null, null, null, null, null, null, null, null];
+  gameboard.style.visibility = "visible";
 
   boxes.forEach((box) => {
     box.innerText = "";
@@ -27,6 +28,7 @@ const drawBoard = () => {
         e.target.innerText = currentPlayer;
         if (hasPlayerWon(currentPlayer)) {
           playText.innerHTML = `${currentPlayer} wins!!`;
+          gameboard.style.visibility = "hidden";
           return;
         }
         currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
@@ -34,6 +36,7 @@ const drawBoard = () => {
     });
   });
 };
+
 
 const threeInARow = (first, second, third, player) => {
   return (
