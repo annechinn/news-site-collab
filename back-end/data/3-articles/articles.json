@@ -12,7 +12,7 @@
     "_id": { "$oid": "60d2506cb4f2084cb4ee9512" },
     "title": "Article 2",
     "abstract": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
-    "imageURL": "https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "imageURL": "https://images.pexels.com/photos/130621/pexels-photo-130621.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
     "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
     "author": "60d24aeaeacbc4390430134c",
     "topic": "60d24e9cb4f2084cb4ee9506"
@@ -33,7 +33,7 @@
     "imageURL": "https://images.pexels.com/photos/3735709/pexels-photo-3735709.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
     "author": "60d24b25eacbc4390430134e",
-    "topic": "60d24e9cb4f2084cb4ee9506" 
+    "topic": "60d2506cb4f2084cb4ee9512" 
   },
   {
     "_id": { "$oid": "60d2511db4f2084cb4ee9518" },

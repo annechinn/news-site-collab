@@ -17,6 +17,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:articleId', getArticle, async (req, res) => {
+  await populateArticle(res.article);
   res.send(res.article);
 });
 
