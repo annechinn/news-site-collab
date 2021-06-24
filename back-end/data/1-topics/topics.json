@@ -3,7 +3,8 @@
     "_id": { "$oid": "60d24e7cb4f2084cb4ee9504" },
     "name": "tech",
     "title": "Technology",
-    "color": "#009cff"
+    "color": "#009cff",
+    "showcaseArticle": "60d24ffdb4f2084cb4ee9510"
   },
   {
     "_id": { "$oid": "60d24e9cb4f2084cb4ee9506" },
