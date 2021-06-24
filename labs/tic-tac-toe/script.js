@@ -53,11 +53,9 @@ const hasPlayerWon = (player) => {
   if (threeInARow(0, 3, 6, player)) return true;
   if (threeInARow(0, 4, 8, player)) return true;
 
-  // from bottom check up, across and diagonal
+  // from bottom check up and across
   if (threeInARow(8, 2, 5, player)) return true;
   if (threeInARow(8, 7, 6, player)) return true;
-  if (threeInARow(2, 4, 6, player)) return true;
-
 
   // from middle check middle vertical ,middle horizontal and middle diagonal which includes top right corner element
   if (threeInARow(4, 3, 5, player)) return true;
