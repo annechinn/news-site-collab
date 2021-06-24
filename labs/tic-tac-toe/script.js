@@ -6,11 +6,9 @@ let spaces = [];
 const O_TEXT = "O";
 const X_TEXT = "X";
 let currentPlayer = O_TEXT;
-const test=document.getElementById("test");
 
 const initGame = () => {
   spaces = [null, null, null, null, null, null, null, null, null];
-  gameboard.style.visibility = "visible";
 
   boxes.forEach((box) => {
     box.innerText = "";
@@ -18,7 +16,7 @@ const initGame = () => {
 
   playText.innerHTML = `Let's Play!!`;
   currentPlayer = O_TEXT;
-};
+}
 
 const drawBoard = () => {
   boxes.forEach((box) => {
@@ -27,9 +25,9 @@ const drawBoard = () => {
       if (!spaces[id]) {
         spaces[id] = currentPlayer;
         e.target.innerText = currentPlayer;
+        e.target.classList.add(currentPlayer === O_TEXT?'box-o':'box-x');
         if (hasPlayerWon(currentPlayer)) {
           playText.innerHTML = `${currentPlayer} wins!!`;
-          gameboard.style.visibility = "hidden";
           return;
         }
         currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
@@ -38,14 +36,11 @@ const drawBoard = () => {
   });
 };
 
-
 const threeInARow = (first, second, third, player) => {
-  return (
-    spaces[first] === player &&
-    spaces[second] === player &&
-    spaces[third] === player
-  );
-};
+  return (spaces[first]  === player && 
+          spaces[second] === player && 
+          spaces[third]  === player);
+}
 
 const hasPlayerWon = (player) => {
   // from top left, check across, down, and diagonal
@@ -53,16 +48,14 @@ const hasPlayerWon = (player) => {
   if (threeInARow(0, 3, 6, player)) return true;
   if (threeInARow(0, 4, 8, player)) return true;
 
-  // from bottom check up, across and diagonal
+  // from bottom check up and across
   if (threeInARow(8, 2, 5, player)) return true;
   if (threeInARow(8, 7, 6, player)) return true;
-  if (threeInARow(2, 4, 6, player)) return true;
 
-
-  // from middle check middle vertical ,middle horizontal and middle diagonal which includes top right corner element
+  // from middle check middle vertical and middle horizontal
   if (threeInARow(4, 3, 5, player)) return true;
   if (threeInARow(4, 1, 7, player)) return true;
-  if (threeInARow(4, 2, 6, player)) return true;
+
   return false;
 };
 
