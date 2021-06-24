@@ -1,4 +1,4 @@
-function getHTMLForArticleSummary(article, topic) {
+ function getHTMLForArticleSummary(article, topic) {
   
   let imageURL = (article.multimedia)?article.multimedia[0].url:'';
 
