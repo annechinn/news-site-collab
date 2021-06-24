@@ -23,8 +23,7 @@ const ArticleSchema = new mongoose.Schema(
       required: [true, "can't be blank"]
     },
     imageURL: String,
-  },
-  { timestamps: true }
+  }
 );
 
 mongoose.model("Article", ArticleSchema);

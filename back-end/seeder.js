@@ -6,6 +6,7 @@ const {mongoURI} = require('./config');
 const config = {
   database: mongoURI,
   dropCollections: true,
+  setTimestamps: true
 };
 
 async function seedDB() {

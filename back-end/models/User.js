@@ -22,6 +22,6 @@ const UserSchema = new mongoose.Schema({
   imageURL: {
     type: String,
   }
-}, {timestamps: true});
+});
 
 mongoose.model('User', UserSchema);

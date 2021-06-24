@@ -6,8 +6,7 @@ const TopicSchema = new mongoose.Schema(
     title: String,
     color: String,
     showcaseArticle: { type: mongoose.Schema.Types.ObjectId, ref: 'Article' }
-  },
-  { timestamps: true }
+  }
 );
 
 mongoose.model("Topic", TopicSchema);
