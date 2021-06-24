@@ -16,7 +16,7 @@ const initGame = () => {
 
   playText.innerHTML = `Let's Play!!`;
   currentPlayer = O_TEXT;
-}
+};
 
 const drawBoard = () => {
   boxes.forEach((box) => {
@@ -25,7 +25,7 @@ const drawBoard = () => {
       if (!spaces[id]) {
         spaces[id] = currentPlayer;
         e.target.innerText = currentPlayer;
-        e.target.classList.add(currentPlayer === O_TEXT?'box-o':'box-x');
+        e.target.classList.add(currentPlayer === O_TEXT ? "box-o" : "box-x");
         if (hasPlayerWon(currentPlayer)) {
           playText.innerHTML = `${currentPlayer} wins!!`;
           return;
@@ -37,10 +37,12 @@ const drawBoard = () => {
 };
 
 const threeInARow = (first, second, third, player) => {
-  return (spaces[first]  === player && 
-          spaces[second] === player && 
-          spaces[third]  === player);
-}
+  return (
+    spaces[first] === player &&
+    spaces[second] === player &&
+    spaces[third] === player
+  );
+};
 
 const hasPlayerWon = (player) => {
   // from top left, check across, down, and diagonal
