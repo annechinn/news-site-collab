@@ -6,6 +6,10 @@ const Comment = mongoose.model('Comment');
 router.get('/', async (req, res) => {
   try {
     const articles = await Article.find();
+    for (let i=0; i<articles.length;++i) {
+      await populateArticle(articles[i]);
+    }
+
     res.json(articles);
   } catch (err) {
     res.status(500).json({message: err.message})
@@ -26,6 +30,7 @@ router.put('/:articleId', getArticle, async (req, res) => {
     article.body = req.body.body;
    
     await article.save();
+    await populateArticle(article);
     res.status(201).json(article);
   }
   catch(err) {
@@ -44,8 +49,9 @@ router.post('/', async (req, res) => {
   });
 
   try {
-    const newArticle =  await article.save();
-    res.status(201).json(newArticle);
+    await article.save();
+    await populateArticle(res.article);
+    res.status(201).json(article);
   }
   catch (err) {
     res.status(400).json({message: err.message})
@@ -78,6 +84,15 @@ router.post('/:articleId/comments', async (req, res) => {
   }
 });
 
+/********************************* helers     *********************************/
+
+async function populateArticle(article) {
+  await article
+  .populate('author')
+  .populate('topic')
+  .execPopulate();
+}
+
 /********************************* middleware *********************************/
 
 async function getArticle(req, res, next) {
@@ -88,11 +103,7 @@ async function getArticle(req, res, next) {
     if (article === null) {
       return res.status(404).json({message: `Cannot find article with id: ${id}`});
     }
-    await article
-          .populate('author')
-          .populate('topic')
-          .execPopulate();
-          
+
     res.article = article;
   }
   catch (err) {
