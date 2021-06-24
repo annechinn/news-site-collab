@@ -84,16 +84,21 @@ async function getArticle(req, res, next) {
   let article = null;
   const id = req.params.articleId;
   try {
-    article = await Article.findById(id).populate('author');
+    const article = await Article.findById(id);
     if (article === null) {
       return res.status(404).json({message: `Cannot find article with id: ${id}`});
     }
+    await article
+          .populate('author')
+          .populate('topic')
+          .execPopulate();
+          
+    res.article = article;
   }
   catch (err) {
     return res.status(500).json({message:err.message});
   }
 
-  res.article = article;
   next();
 }
 
