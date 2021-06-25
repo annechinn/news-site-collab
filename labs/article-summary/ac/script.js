@@ -27,7 +27,7 @@ function getHTMLForArticle(article){
 
 async function showTopic(topic) {
   const div = document.getElementById('main-content');
-  div.style.color = topic.color;
+  div.style.color = t
   const article = await getArticleById(topic.showcaseArticle);
   div.innerHTML = getHTMLForArticle(article);
 }
