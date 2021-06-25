@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: var(--light-color);
 }
 
@@ -29,13 +29,11 @@ a {
 .articles {
   display: grid;
   grid-template-columns: 1fr;
-  
+  grid-gap: 16px;
 }
 
 @media screen and (min-width: 600px) {
   .articles {
-    display: grid;
-    grid-gap: 16px;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
@@ -46,11 +44,11 @@ a {
 }
 
 .category {
-  color:white;
+  color: #fff;
   font-size: 9px;
+  text-transform: uppercase;
   padding: 4px 8px;
   border-radius: 10px;
-  
 }
 
 .category-sports {
@@ -59,7 +57,7 @@ a {
 .category-arts {
   background-color: var(--arts-color);
 }
-.category-technology {
+.category-tech {
   background-color: var(--tech-color);
 }
 .category-food {
@@ -73,11 +71,12 @@ a {
   color: #fff;
   padding: 32px;
   height: 40vh;
+  background: url("./assets/robot.jpg") center/cover;
 }
 
-/* .showcase.food {
-  background: url("../images/french-toast.jpg") center/cover;
-} */
+.showcase.food {
+  background: url("./assets/french-toast.jpg") center/cover;
+}
 
 @media screen and (min-width: 600px) {
   .showcase p {
@@ -119,12 +118,7 @@ a {
 .nav-container ul {
   display: flex;
   flex-direction: column;
-  list-style-type: none;
-}
-
-.nav-container li a:hover {
-  font-weight: bold;
-  color: var(--primary-color);
+  list-style: none;
 }
 
 /* style for larger widths */
@@ -140,6 +134,9 @@ a {
   font-weight: bold;
 }
 
+.nav-container a:hover {
+  color: var(--primary-color);
+}
 
 .footer-container {
   background-color: var(--dark-color);
