@@ -1,16 +1,21 @@
 (()=> {
 
-function reverseArray(array) {
-  let result = [];
-  for (let i=array.length-1;i>=0;i--) {
-    result.push(array[i]);
-  }
+// copy the first n elements in input array, arr
+// into outputArray
+// fill it up
+// return it
 
-  return result;
+function firstAndLast(a) {
+  let results = [];
+  results.push(a[0]);
+  results.push(a[a.length-1]);
+  return results;
+
 }
 
-const array = [1,2,3,4];
-console.log(reverseArray(array));
+console.log(firstAndLast([1, 2, 3, 4, 5]));
+console.log(firstAndLast([]));
+
 
   
    
