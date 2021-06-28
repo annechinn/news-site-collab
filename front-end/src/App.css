@@ -17,32 +17,6 @@ body {
   background-color: var(--light-color);
 }
 
-article img {
-  width: 100%;
-}
-
-a {
-  color: var(--link-color);
-  text-decoration: none;
-}
-
-.articles {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 16px;
-}
-
-@media screen and (min-width: 600px) {
-  .articles {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-.articles > article {
-  background: #fff;
-  padding: 16px;
-}
-
 .category {
   color: #fff;
   font-size: 9px;
@@ -67,21 +41,9 @@ a {
   background-color: var(--science-color);
 }
 
-.showcase {
-  color: #fff;
-  padding: 32px;
-  height: 40vh;
-  background: url("./assets/robot.jpg") center/cover;
-}
-
-.showcase.food {
-  background: url("./assets/french-toast.jpg") center/cover;
-}
-
-@media screen and (min-width: 600px) {
-  .showcase p {
-    width: 50%;
-  }
+a {
+  color: var(--link-color);
+  text-decoration: none;
 }
 
 .btn {
@@ -95,29 +57,76 @@ a {
   opacity: 0.9;
 }
 
-/********************************* Showcase **************************/
-.nav-container {
-  background-color: #fff;
-  padding: 18px;
-  display: flex;
+/********************** ArticleSummary **********************/
+
+article img {
   width: 100%;
 }
 
-/* this style centers the image within the anchor */
-.nav-container > a {
+/********************** ArticleGrid **********************/
+
+.articles {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+}
+
+@media screen and (min-width: 600px) {
+  .articles {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.articles > article {
+  background: #fff;
+  padding: 16px;
+}
+
+/************************** Showcase **************************/
+
+.showcase {
+  color: #fff;
+  padding: 32px;
+  height: 40vh;
+  background: url("https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cm9ib3R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60") center/cover;
+}
+
+@media screen and (min-width: 600px) {
+  .showcase p {
+    width: 50%;
+  }
+}
+
+/********************************* Header **************************/
+main header {
+  background-color: #fff;
+  padding: 18px;
+  display: flex;
+}
+
+/* this style centers the logo image within the anchor */
+main header > a {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.nav-container .logo {
+header .logo {
   width: 180px;
+}
+
+/******************** NavBar **********************/
+.nav-container {
+  width:100%;
+}
+
+.nav-container ul {
+  display: flex;
+  flex-direction:column;
 }
 
 /* default style for mobile width */
 .nav-container ul {
-  display: flex;
-  flex-direction: column;
   list-style: none;
 }
 
@@ -125,7 +134,6 @@ a {
 @media screen and (min-width: 600px) {
   .nav-container ul {
     flex-direction: row;
-    width: 100%;
     justify-content: space-around;
   }
 }
@@ -137,6 +145,8 @@ a {
 .nav-container a:hover {
   color: var(--primary-color);
 }
+
+/******************** Footer **********************/
 
 .footer-container {
   background-color: var(--dark-color);
