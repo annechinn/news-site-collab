@@ -1,23 +1,15 @@
 (()=> {
 
-// copy the first n elements in input array, arr
-// into outputArray
-// fill it up
-// return it
+function getAverage(marks){
 
-function firstAndLast(a) {
-  let results = [];
-  results.push(a[0]);
-  results.push(a[a.length-1]);
-  return results;
-
+  let total = 0;
+  marks.forEach(x=>total+=x);
+ // let total = marks.reduce((acc,mark)=> acc+=mark, 0);
+  return Math.floor(total/marks.length);
 }
 
-console.log(firstAndLast([1, 2, 3, 4, 5]));
-console.log(firstAndLast([]));
+console.log(getAverage([2,2,2,2])===2);
+console.log(getAverage([1,2,3,4,5,])===3);
+console.log(getAverage([1,1,1,1,1,1,1,2])===1);
 
-
-  
-   
-  
   })();

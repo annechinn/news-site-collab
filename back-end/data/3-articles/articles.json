@@ -66,7 +66,7 @@
     "_id": { "$oid": "60d25199b4f2084cb4ee951e" },
     "title": "Article 8",
     "abstract": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
-    "imageURL": "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=5000",
+    "imageURL": "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
     "author": "60d24b25eacbc4390430134e",
     "topic": "60d24eb4b4f2084cb4ee9508" 
@@ -75,7 +75,7 @@
     "_id": { "$oid": "60d251b9b4f2084cb4ee9520" },
     "title": "Article 9",
     "abstract": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
-    "imageURL": "https://images.pexels.com/photos/853006/pexels-photo-853006.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=50",
+    "imageURL": "https://images.pexels.com/photos/853006/pexels-photo-853006.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad.",
     "author": "60d24b25eacbc4390430134e",
     "topic": "60d24eb4b4f2084cb4ee9508" 

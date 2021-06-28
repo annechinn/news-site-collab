@@ -61,7 +61,7 @@ router.post('/', async (req, res) => {
 
 router.get('/:articleId/comments', async (req, res) => {
   try {
-    const comments = await Comment.find({ articleId: req.params.articleId }).exec();
+    const comments = await Comment.find({ articleId: req.params.articleId });
     res.send(comments);
   }
   catch(err) {
