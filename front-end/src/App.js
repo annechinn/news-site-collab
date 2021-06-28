@@ -62,7 +62,7 @@ function App() {
           </p>
         </article>
         <article>
-          <img src="https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=50" alt="" />
+          <img src="https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
           <span className="category category-sports">Sports</span>
           <h3><a href="">Lorem ipsum dolor sit amet.</a></h3>
           <p>
