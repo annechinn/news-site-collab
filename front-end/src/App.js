@@ -30,7 +30,7 @@ function App() {
 
       {/*---------------------- Showcase ----------------------*/}
       <section className="showcase food">
-        <span className="category category-tech">Technology</span>
+        <span className="topic topic-technology">Technology</span>
         <h1>An Article About Technology</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
@@ -43,7 +43,7 @@ function App() {
       <section className="articles">
         <article>
           <img src="https://images.pexels.com/photos/130621/pexels-photo-130621.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" />
-          <span className="category category-science">Science</span>
+          <span className="topic topic-science">Science</span>
           <h3><a href="">Lorem ipsum dolor sit amet.</a></h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea
@@ -53,7 +53,7 @@ function App() {
         </article>
         <article>
           <img src="https://images.pexels.com/photos/6529912/pexels-photo-6529912.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
-          <span className="category category-food">Food</span>
+          <span className="topic topic-food">Food</span>
           <h3><a href="">Lorem ipsum dolor sit amet.</a></h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea
@@ -63,7 +63,7 @@ function App() {
         </article>
         <article>
           <img src="https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
-          <span className="category category-sports">Sports</span>
+          <span className="topic topic-sports">Sports</span>
           <h3><a href="">Lorem ipsum dolor sit amet.</a></h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea
@@ -73,7 +73,7 @@ function App() {
         </article>
         <article>
           <img src="https://images.pexels.com/photos/256189/pexels-photo-256189.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
-          <span className="category category-arts">Arts</span>
+          <span className="topic topic-arts">Arts</span>
           <h3><a href="">Lorem ipsum dolor sit amet.</a></h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea
@@ -83,7 +83,7 @@ function App() {
         </article>
         <article>
           <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c25vd2JvYXJkZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" />
-          <span className="category category-sports">Sports</span>
+          <span className="topic topic-sports">Sports</span>
           <h3><a href="">Lorem ipsum dolor sit amet.</a></h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea
@@ -92,7 +92,7 @@ function App() {
           </p>
         </article>
         <article>
-          <span className="category category-science">Science</span>
+          <span className="topic topic-science">Science</span>
           <h3><a href="">Lorem ipsum dolor sit amet.</a></h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea

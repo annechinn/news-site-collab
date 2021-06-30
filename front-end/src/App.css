@@ -17,7 +17,7 @@ body {
   background-color: var(--light-color);
 }
 
-.category {
+.topic {
   color: #fff;
   font-size: 9px;
   text-transform: uppercase;
@@ -25,19 +25,19 @@ body {
   border-radius: 10px;
 }
 
-.category-sports {
+.topic-sports {
   background-color: var(--sports-color);
 }
-.category-arts {
+.topic-arts {
   background-color: var(--arts-color);
 }
-.category-tech {
+.topic-tech {
   background-color: var(--tech-color);
 }
-.category-food {
+.topic-food {
   background-color: var(--food-color);
 }
-.category-science {
+.topic-science {
   background-color: var(--science-color);
 }
 
