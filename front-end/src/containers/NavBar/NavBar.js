@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from "react-router-dom"; 
+import {NavLink, Link} from "react-router-dom"; 
 import {getTopics} from './../../api/back-end';
 
 import './NavBar.css';
@@ -17,7 +17,7 @@ function NavBar() {
 
   const sectionLinks = topics.map(topic=> {
     const toLink = `/section/${topic._id}`;
-    return <li key={topic._id}><Link to={toLink}>{topic.title}</Link></li>;
+    return <li key={topic._id}><NavLink to={toLink} activeClassName="active">{topic.title}</NavLink></li>;
   });
 
   return (

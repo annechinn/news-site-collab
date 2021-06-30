@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from "react-router-dom"; 
-import TopicPill from '../TopicPill/TopicPill';
 import './ArticleCard.css';
 
 function ArticleCard({article}) {
@@ -8,7 +7,6 @@ function ArticleCard({article}) {
   return (
     <article key={article.id}>
     <img src={article.imageURL} alt="" />
-    <TopicPill name={article.topic.name} title={article.topic.title}/>
     <h3><Link to={articleLink}>{article.title}</Link></h3>
     <p>{article.abstract}</p>
     

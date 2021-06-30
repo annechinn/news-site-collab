@@ -27,3 +27,6 @@
 .nav-container a:hover {
   color: var(--primary-color);
 }
+.nav-container a.active {
+  color: var(--primary-color);
+}
