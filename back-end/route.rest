@@ -7,7 +7,16 @@ GET http://localhost:5000/api/articles
 
 ###
 
-GET http://localhost:5000/api/articles/60d24ffdb4f2084cb4ee9510
+GET http://localhost:5000/api/articles/60dbf7289590d334b822ad6c
+
+###
+
+
+GET http://localhost:5000/api/articles/60d24ffdb4f2084cb4ee9510/comments
+
+###
+
+GET http://localhost:5000/api/articles/topic/60d2506cb4f2084cb4ee9512
 
 ###
 

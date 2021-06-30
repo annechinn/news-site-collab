@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const router = require('express').Router();
 const Article = mongoose.model('Article');
 const Comment = mongoose.model('Comment');
+const Topic = mongoose.model('Topic');
 
 router.get('/', async (req, res) => {
   try {
@@ -59,9 +60,23 @@ router.post('/', async (req, res) => {
   }
 });
 
+
+router.get('/topic/:topicId', async (req, res) => {
+  try {
+    const articles = await Article.find({topic: req.params.topicId});
+    for (let i=0; i<articles.length;++i) {
+      await populateArticle(articles[i]);
+    }
+
+    res.json(articles);
+  } catch (err) {
+    res.status(500).json({message: err.message})
+  }
+});
+
 router.get('/:articleId/comments', async (req, res) => {
   try {
-    const comments = await Comment.find({ articleId: req.params.articleId });
+    const comments = await Comment.find({ article: req.params.articleId });
     res.send(comments);
   }
   catch(err) {
