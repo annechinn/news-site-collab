@@ -11,6 +11,10 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/:topicId', getTopic, async (req, res) => {
+  res.send(res.topic);
+});
+
 router.post('/', async (req, res) => {
 
   var topic = new Topic({
@@ -27,5 +31,24 @@ router.post('/', async (req, res) => {
     res.status(400).json({message: err.message})
   }
 });
+
+
+async function getTopic(req, res, next) {
+  let topic = null;
+  const id = req.params.topicId;
+  try {
+    const topic = await Topic.findById(id);
+    if (topic === null) {
+      return res.status(404).json({message: `Cannot find topic with id: ${id}`});
+    }
+
+    res.topic = topic;
+  }
+  catch (err) {
+    return res.status(500).json({message:err.message});
+  }
+
+  next();
+}
 
 module.exports = router;

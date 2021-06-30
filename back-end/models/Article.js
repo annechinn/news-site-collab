@@ -2,13 +2,10 @@ const mongoose = require("mongoose");
 
 const ArticleSchema = new mongoose.Schema(
   {
-    author: { 
-      type: mongoose.Schema.Types.ObjectId, 
-      ref: 'User' 
-    },
     topic: { 
       type: mongoose.Schema.Types.ObjectId, 
-      ref: 'Topic' 
+      ref: 'Topic' ,
+      required: true,
     },
     title: {
       type: String,
@@ -22,7 +19,9 @@ const ArticleSchema = new mongoose.Schema(
       type: String,
       required: [true, "can't be blank"]
     },
+    byline:String,
     imageURL: String,
+    jumboImageURL: String
   }
 );
 
