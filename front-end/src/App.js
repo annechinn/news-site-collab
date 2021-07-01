@@ -6,7 +6,8 @@ import './App.css';
 import Header from './containers/Header/Header';
 import Footer from './containers/Footer/Footer';
 import ArticleSection from './containers/ArticleSection/ArticleSection';
-
+import Article from './components/Article/Article';
+import NYTBooks from './containers/NYTBooks/NYTBooks';
 
 export default function App(props) {
     return (
@@ -14,10 +15,17 @@ export default function App(props) {
             <main>
                 <Header/>
                 <Switch>
-                    <Route path="/section/:topicId/:articleId" component={ArticleSection} />
-                    <Route path="/section/:topicId" component={ArticleSection} />
+                    <Route path="/article-section/:topicId/article/:articleId">
+                        <Article/>
+                    </Route>
+                    <Route path="/article-section/:topicId">
+                        <ArticleSection/>
+                    </Route>
+                    <Route path="/nyt-books">
+                        <NYTBooks/>
+                    </Route>      
                     <Route exact path="/">
-                        <Redirect to="/section/home" />
+                        <Redirect to="/article-section/home" />
                     </Route>
                 </Switch>
                 <Footer/>

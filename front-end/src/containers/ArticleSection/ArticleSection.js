@@ -1,49 +1,32 @@
 import React, {useState, useEffect} from 'react';
+import {useParams} from 'react-router-dom';
+
 import './ArticleSection.css';
-import {getArticlesForTopic, getArticle, getTopic} from '../../api/back-end';
+import {getArticlesForTopic, getTopic} from '../../api/back-end';
 import ShowcaseArticle from './../../components/ShowcaseArticle/ShowcaseArticle';
 import ArticleGrid from '../../components/ArticleGrid/ArticleGrid';
-import Article from '../../components/Article/Article';
 
-function ArticleSection(props) {
-
-  const topicId = props.match.params.topicId;
-  const articleId = props.match.params.articleId;
- 
+function ArticleSection() {
+  
   const [articles, setArticles] = useState([]);
-  const [article, setArticle] = useState(null);
   const [topic, setTopic] = useState(null);
 
-  useEffect(() => {
-
-    if (articleId) {
-      (async () => {
-        setArticle(await getArticle(articleId));
-      })();
-    }
-  }, [articleId]);
+  const { topicId } = useParams();
 
   useEffect(() => {
-
-    if (!articleId) {
-       setTopic(null);
-      setArticles([]);
  
+      setTopic(null);
+      setArticles([]);
+
       (async () => {
         setTopic(await getTopic(topicId));
         setArticles(await getArticlesForTopic(topicId));
       })();
-    }
 
-  }, [articleId, topicId]);
+  }, [topicId]);
 
 
-  if (articleId && article) {
-    return (
-      <Article article={article}/>
-      );
-  }
-  else if (topic && articles.length>0) {
+  if (topic && articles.length>0) {
     const showcaseArticle = articles.find(x=>x._id===topic.showcaseArticle);
     return (
       <>

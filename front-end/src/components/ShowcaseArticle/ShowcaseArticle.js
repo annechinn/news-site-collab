@@ -1,6 +1,7 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import { buildArticleLink } from '../../utils';
 import './ShowcaseArticle.css';
-
 import TopicPill from '../TopicPill/TopicPill';
 
 function ShowcaseArticle({article}) {
@@ -9,7 +10,7 @@ function ShowcaseArticle({article}) {
       <TopicPill name={article.topic.name} title={article.topic.title}/>
       <h1>{article.title}</h1>
       <p>{article.abstract}</p>
-      <a href="" className="btn">Learn More</a>
+      <Link to={buildArticleLink(article)}>Learn More</Link>
     </section>
     );
 }
