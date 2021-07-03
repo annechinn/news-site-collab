@@ -22,6 +22,7 @@ function ArtsSection() {
   const [squareStyles, setSquareStyles] = useState(styles);
 
   function updateStyles(index, background, boxShadow) {
+    
     setSquareStyles(prevState => 
         prevState.map((x,i)=>i===index?{background:background, boxShadow:boxShadow}:x));
   }
@@ -36,6 +37,7 @@ function ArtsSection() {
   }
 
   return (
+    <>
     <div className="arts">
       <div className="squares">
         {squareStyles.map((x,index)=>{
@@ -48,6 +50,7 @@ function ArtsSection() {
         })}
       </div>
     </div>
+    </>
   );
 }
 
