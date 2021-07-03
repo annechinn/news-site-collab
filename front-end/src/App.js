@@ -1,24 +1,24 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-import Footer from './containers/Footer/Footer';
-import Header from './containers/Header/Header';
-import ScienceSection from './containers/ScienceSection/ScienceSection';
-import ArtsSection from './containers/ArtsSection/ArtsSection';
-import TechSection from './containers/TechSection/TechSection';
-import FoodSection from './containers/FoodSection/FoodSection';
-import ArticleSection from './containers/ArticleSection/ArticleSection';
-
+import Footer from "./containers/Footer/Footer";
+import Header from "./containers/Header/Header";
+import ScienceSection from "./containers/ScienceSection/ScienceSection";
+import ArtsSection from "./containers/ArtsSection/ArtsSection";
+import TechSection from "./containers/TechSection/TechSection";
+import FoodSection from "./containers/FoodSection/FoodSection";
+import ArticleSection from "./containers/ArticleSection/ArticleSection";
+import SportsSection from "./containers/SportsSection/SportsSection";
 
 function App() {
   return (
     <>
-    <main>
-      <Header/>
-      <ArtsSection/>
-      <Footer/>
-    </main>
-    </>  
+      <main>
+        <Header />
+        <ArtsSection />
+        <Footer />
+      </main>
+    </>
   );
 }
 
