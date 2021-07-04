@@ -1,24 +1,43 @@
-import React from 'react';
-import './ArticleSection.css';
+import React, {useState, useEffect} from 'react';
+import {useParams} from 'react-router-dom';
 
-import ShowcaseArticle from '../../components/ShowcaseArticle/ShowcaseArticle';
-import ArticleGrid from '../../containers/ArticleGrid/ArticleGrid';
+import './ArticleSection.css';
+import {getArticlesForTopic, getTopic} from '../../api/back-end';
+import ShowcaseArticle from './../../components/ShowcaseArticle/ShowcaseArticle';
+import ArticleGrid from '../../components/ArticleGrid/ArticleGrid';
 
 function ArticleSection() {
-  return (
-    <>
-      <ShowcaseArticle
-       imageURL="https://images.pexels.com/photos/130621/pexels-photo-130621.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-       title="Lorem ipsum dolor sit amet."
-       abstract="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ea
-       impedit libero, beatae animi provident nesciunt molestias ipsam nemo ad."
-       topic="science"
-        />
-        
-      <ArticleGrid/>
-    </>
-  )
+  
+  const [articles, setArticles] = useState([]);
+  const [topic, setTopic] = useState(null);
 
+  const { topicId } = useParams();
+
+  useEffect(() => {
+ 
+      setTopic(null);
+      setArticles([]);
+
+      (async () => {
+        setTopic(await getTopic(topicId));
+        setArticles(await getArticlesForTopic(topicId));
+      })();
+
+  }, [topicId]);
+
+
+  if (topic && articles.length>0) {
+    const showcaseArticle = articles.find(x=>x._id===topic.showcaseArticle);
+    return (
+      <>
+      <ShowcaseArticle article={showcaseArticle}/>
+      <ArticleGrid articles={articles}/>
+      </>
+      );
+  }
+  else {
+    return (<></>);
+  }
 }
 
 export default ArticleSection;

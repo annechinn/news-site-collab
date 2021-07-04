@@ -61,7 +61,8 @@ const topicDocuments = [
 async function getArticles (section) {
     
   const response = await axios.get(`https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=5Vd8O8baGS3WEG1eQVAaS2mG6K0VyHH8`)
-  return response.data.results;
+  let articles = response.data.results;
+  return articles;
 };
 
 function getRandomInt(min, max) {
@@ -88,22 +89,22 @@ async function initTopic(name) {
     const jumboImageURL = article.multimedia?article.multimedia.find(x=>x.format==='superJumbo').url:'';
 
     // scrap the article html and build paragraphs for the article body
-    const response = await axios.get(article.url);
-    const $ = cheerio.load(response.data);
+    // const response = await axios.get(article.url);
+    // const $ = cheerio.load(response.data);
 
-    let body = '';
-    const paragraphs = $('section[name=articleBody]').find('p');
-    for (let i = 0; i < paragraphs.length; i++) {
-        const pText = '<p>' + $(paragraphs[i]).text() + '</p>';
-        body+=pText;
-    }
+    // let body = '';
+    // const paragraphs = $('section[name=articleBody]').find('p');
+    // for (let i = 0; i < paragraphs.length; i++) {
+    //     const pText = '<p>' + $(paragraphs[i]).text() + '</p>';
+    //     body+=pText;
+    // }
 
     articleDocuments.push({
       "_id": articleId,
       byline: article.byline,
       title:article.title,
       abstract:article.abstract,
-      body:body,
+      body:'',
       imageURL: imageURL,
       jumboImageURL: jumboImageURL,
       topic: mongoose.Types.ObjectId(topic._id)

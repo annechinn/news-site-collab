@@ -1,19 +1,16 @@
 import React from 'react';
+import {Link} from "react-router-dom"; 
+import { buildArticleLink } from '../../utils';
 import './ArticleCard.css';
 
-function ArticleCard({imageURL, title, abstract, topic}) {
-  const classString =  `topic topic-${topic}`;
-
+function ArticleCard({article}) {
   return (
-    <article>
-      <img src={imageURL} alt="" />
-      <span className={classString}>{topic}</span>
-      <h3><a href="">{title}</a></h3>
-      <p>
-        {abstract}
-      </p>
-  </article>
-  )
+    <article key={article.id}>
+      <img src={article.imageURL} alt="" />
+      <h3><Link to={buildArticleLink(article)}>{article.title}</Link></h3>
+      <p>{article.abstract}</p> 
+   </article>
+    );
 }
 
 export default ArticleCard;

@@ -1,0 +1,23 @@
+.topic {
+  color: #fff;
+  font-size: 9px;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 10px;
+}
+
+.topic-sports {
+  background-color: #f99500;
+}
+.topic-arts {
+  background-color: #a66bbe;
+}
+.topic-technology {
+  background-color: #009cff;
+}
+.topic-food {
+  background-color: #d1483b;
+}
+.topic-science {
+  background-color: #3bd142;
+}

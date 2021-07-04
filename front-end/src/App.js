@@ -1,25 +1,40 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 
-import Footer from "./containers/Footer/Footer";
-import Header from "./containers/Header/Header";
-import ScienceSection from "./containers/ScienceSection/ScienceSection";
-import ArtsSection from "./containers/ArtsSection/ArtsSection";
-import TechSection from "./containers/TechSection/TechSection";
-import FoodSection from "./containers/FoodSection/FoodSection";
-import ArticleSection from "./containers/ArticleSection/ArticleSection";
-import SportsSection from "./containers/SportsSection/SportsSection";
+import './App.css';
 
-function App() {
-  return (
-    <>
-      <main>
-        <Header />
-        <ArtsSection />
-        <Footer />
-      </main>
-    </>
-  );
+import Header from './containers/Header/Header';
+import Footer from './containers/Footer/Footer';
+import ArticleSection from './containers/ArticleSection/ArticleSection';
+import Article from './components/Article/Article';
+import NYTBooks from './containers/NYTBooks/NYTBooks';
+import ACPage from './practice/ac/ACPage/ACPage';
+
+export default function App(props) {
+    return (
+        <Router>
+            <main>
+                <Header/>
+                <Switch>
+                    <Route path="/article-section/:topicId/article/:articleId">
+                        <Article/>
+                    </Route>
+                    <Route path="/article-section/:topicId">
+                        <ArticleSection/>
+                    </Route>
+                    <Route path="/nyt-books">
+                        <NYTBooks/>
+                    </Route>      
+                    <Route exact path="/">
+                        <Redirect to="/article-section/60d24e7cb4f2084cb4ee9505" />
+                    </Route>
+                    <Route path="/ac-page">
+                        <ACPage/>
+                    </Route>
+                </Switch>
+                <Footer/>
+            </main>
+        </Router>
+    );
 }
 
-export default App;
