@@ -1,0 +1,37 @@
+[
+  {
+    "_id": { "$oid": "60d24e7cb4f2084cb4ee9504" },
+    "name": "tech",
+    "title": "Technology",
+    "color": "#009cff",
+    "showcaseArticle": {"$oid": "60d24ffdb4f2084cb4ee9510"}
+  },
+  {
+    "_id": { "$oid": "60d2506cb4f2084cb4ee9512" },
+    "name": "science",
+    "title": "Science",
+    "color": "#3bd142",
+    "showcaseArticle": {"$oid": "60d2506cb4f2084cb4ee9512"}
+  },
+  {
+    "_id": { "$oid": "60d24eb4b4f2084cb4ee9508" },
+    "name": "food",
+    "title": "Food",
+    "color": "#d1483b",
+    "showcaseArticle": {"$oid": "60d2517ab4f2084cb4ee951c"}
+  },
+  {
+    "_id": { "$oid": "60d24ed6b4f2084cb4ee950a" },
+    "name": "arts",
+    "title": "Arts",
+    "color": "#a66bbe",
+    "showcaseArticle": {"$oid": "60d2514bb4f2084cb4ee951a"}
+  },
+  {
+    "_id": { "$oid": "60d24eecb4f2084cb4ee950c" },
+    "name": "sports",
+    "title": "Sports",
+    "color": "#f99500",
+    "showcaseArticle": {"$oid": "60d2511db4f2084cb4ee9518"}
+  }
+]

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>  
+    <div class="container">
+      <h1>The CSS Box Model</h1>
+      
+      <div class="controls">    
+        <div class="control">
+         <span>Padding</span> 
+         <input id="boxPadding" type="range" min="0" max="30" step="1" onInput="updatePadding(this.value)" value="0">
+         <span id="padding"></span>
+        </div>
+
+        <div class="control">
+         <span>Margin</span> 
+         <input id="boxMargin" type="range" min="0" max="30" step="1" onInput="updateMargin(this.value)" value="0">
+         <span id="margin"></span>
+        </div>
+
+        <div class="control">
+          <span>Border</span> 
+          <input id="boxBorder" type="range" min="0" max="30" step="1" onInput="updateBorder(this.value)" value="0">
+          <span id="borderWidth"></span>
+        </div>
+      </div>
+      
+      <div class="output">
+        <div class="box">B1</div>
+        <div class="box">B2</div>
+        <div class="box">B3</div>
+      </div>
+    </div>
+</body>
+</html>
+
