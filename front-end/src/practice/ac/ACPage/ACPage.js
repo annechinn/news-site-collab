@@ -1,9 +1,11 @@
 import React from 'react';
 import './ACPage.css';
 
+import PriceCheck from '../PriceCheck/PriceCheck';
+
 function ACPage() {
   return (
-    <h1>Add components here...</h1>
+    <PriceCheck/>
   );
 }
 
