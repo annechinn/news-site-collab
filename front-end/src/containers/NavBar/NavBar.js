@@ -34,6 +34,7 @@ function NavBar() {
           {sectionLinks}
           <li key={'nyt-books'}><NavLink to="/nyt-books">NYT Books</NavLink></li>
           <li key={'ac-page'}><NavLink to="/ac-page">AC</NavLink></li>
+          <li key={'AJpage'}><NavLink to="/aj-page">AJ</NavLink></li>
         </ul>
       </nav>
       </>

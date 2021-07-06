@@ -1,4 +1,8 @@
 article.full {
   margin-top:20px;
   margin-bottom:20px;
+  /* font-size: medium; */
+}
+body {
+  margin: 10px
 }

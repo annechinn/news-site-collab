@@ -1,6 +1,7 @@
 .nav-container {
   width:100%;
   font-size:12px;
+  
 }
 
 .nav-container ul {
@@ -30,4 +31,8 @@
 }
 .nav-container a.active {
   color: var(--primary-color);
+}
+img {
+  padding: 10px;
+  margin-bottom: 25px;
 }

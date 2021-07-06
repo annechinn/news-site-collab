@@ -5,7 +5,8 @@ import BookCard from '../BookCard/BookCard';
 function BookGrid({books}) {
   return (
     <section className="books">
-      <h3>TODO: BookGrid content goes here</h3>
+      {books.map(x=><BookCard key={x._id} book={x}/>)}
+    
     </section>
 
     );

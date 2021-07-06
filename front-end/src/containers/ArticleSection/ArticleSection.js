@@ -12,7 +12,7 @@ function ArticleSection() {
   const [topic, setTopic] = useState(null);
 
   const { topicId } = useParams();
-
+      
   useEffect(() => {
  
       setTopic(null);
