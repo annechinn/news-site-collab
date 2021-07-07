@@ -1,11 +1,11 @@
 import React from 'react';
 import './ACPage.css';
 
-import PriceCheck from '../PriceCheck/PriceCheck';
+import Store from '../Store/Store';
 
 function ACPage() {
   return (
-    <PriceCheck/>
+    <Store/>
   );
 }
 

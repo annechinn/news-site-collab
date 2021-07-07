@@ -1,0 +1,35 @@
+
+.cart {
+ margin:30px;
+}
+
+.cart-item {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom:10px;
+}
+
+.cart-item .price-info {
+  width:400px;
+  display:grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+}
+
+.cart-item-buttons :first-child {
+  margin-right:5px;
+}
+
+.price-info div {
+  align-self: flex-end;
+}
+
+.store {
+  display:flex;
+  flex-direction: row;
+}
+
+.products {
+  margin:30px;
+  display:flex;
+  flex-direction:row;
+}
