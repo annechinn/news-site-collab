@@ -9,8 +9,11 @@ import ArticleSection from './containers/ArticleSection/ArticleSection';
 import Article from './components/Article/Article';
 import NYTBooks from './containers/NYTBooks/NYTBooks';
 import ACPage from './practice/ac/ACPage/ACPage';
+import AJpage from './practice/AJ/AJpage/AJpage';
 
 export default function App(props) {
+   console.log(props)
+
     return (
         <Router>
             <main>
@@ -30,6 +33,9 @@ export default function App(props) {
                     </Route>
                     <Route path="/ac-page">
                         <ACPage/>
+                    </Route>
+                    <Route path="/aj-page">
+                        <AJpage/>
                     </Route>
                 </Switch>
                 <Footer/>
