@@ -12,7 +12,8 @@ function ArrayState() {
     <Button variant="primary" size="sm" onClick={
       ()=>{
         //nums.push(5); 
-        updateNums([...nums, 5]);
+        //updateNums(nums);
+         updateNums([...nums, 5]);
         }
       }>Add Number</Button>
     </>

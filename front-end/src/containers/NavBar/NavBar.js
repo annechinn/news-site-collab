@@ -10,7 +10,9 @@ function NavBar() {
   useEffect(() => {
 
     (async () => {
+
       setTopics(await getTopics());
+      
     })();
 
   }, []);

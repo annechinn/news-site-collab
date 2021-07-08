@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Select from "react-select";
 import "./PriceCheck.css";
 
-export default function PriceCheck() {
+function PriceCheck() {
 
   const [quantity, setQuantity] = useState(1);
 
@@ -25,3 +25,5 @@ export default function PriceCheck() {
   )
 
 }
+
+export default PriceCheck;

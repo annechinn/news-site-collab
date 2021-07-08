@@ -15,6 +15,7 @@ function ObjectState() {
     <Button variant="primary" size="sm" onClick={
       ()=>{
         //user.firstName = "Sally";
+        //updateUser(user);
         updateUser({...user, firstName: 'Sally'});
         }
       }>Change Name to Sally</Button>
