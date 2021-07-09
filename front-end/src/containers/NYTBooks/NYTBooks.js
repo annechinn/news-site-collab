@@ -9,9 +9,7 @@ function NYTBooks() {
   const [books, setBooks] = useState(null);
 
   useEffect(() => {
- 
-      setBooks(null);
-
+    
       (async () => {
         setBooks(await getBooks('hardcover-fiction'));
       })();
