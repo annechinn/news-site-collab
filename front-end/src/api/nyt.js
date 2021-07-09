@@ -7,15 +7,20 @@ async function getTopStories (section) {
   return response.data.results;
 };
 
+async function getGenres() {
+  const response = await axios.get(`https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=${API_KEY}`);
+  return response.data.results;
+
+}
 async function getBooks (genre) {
- //  api fot getALLGenreList https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=5Vd8O8baGS3WEG1eQVAaS2mG6K0VyHH8   
-  const response = await axios.get(`https://api.nytimes.com/svc/books/v3/lists/current/${genre}.json?api-key=${API_KEY}`)
+   const response = await axios.get(`https://api.nytimes.com/svc/books/v3/lists/current/${genre}.json?api-key=${API_KEY}`)
   return response.data.results;
 };
 
 
 export {
   getBooks,
-  getTopStories
+  getTopStories,
+  getGenres
 }
    

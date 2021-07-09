@@ -2,13 +2,13 @@
 
 
   
-function factorial(n) {
-    if (n===1) return 1;
-    else return n * factorial(n-1);
-}
+  let cartItems = [];
+  cartItems.push({item:2, quantity:1});
 
-let answer = factorial(6);
-console.log(answer);
+  updateCartItems(cartItems);
 
+    console.log(cartItems === cartItems);
+  
+   
 
   })();

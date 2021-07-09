@@ -9,7 +9,7 @@ import ArticleSection from './containers/ArticleSection/ArticleSection';
 import Article from './components/Article/Article';
 import NYTBooks from './containers/NYTBooks/NYTBooks';
 import ACPage from './practice/ac/ACPage/ACPage';
-import AJpage from './practice/AJ/AJpage/AJpage';
+import AJpage from './practice/aj/AJpage/AJpage';
 
 export default function App(props) {
    console.log(props)

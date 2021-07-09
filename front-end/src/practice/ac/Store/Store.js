@@ -97,6 +97,7 @@ function Store() {
   }
 
   function removeItemFromCart(item) {
+
     let found = cartItems.find(x=>x.id===item.id);
     if (found) {
       if (found.quantity===1) {
