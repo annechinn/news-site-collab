@@ -27,10 +27,10 @@ function Footer() {
     <div>
       <h3>Connect with Us</h3>
       <ul>
-        <li><a href="">Contact</a></li>
-        <li><a href="">Careers</a></li>
-        <li><a href="">Subscriptions</a></li>
-        <li><a href="">Help</a></li>
+        <li><a href="#x">Contact</a></li>
+        <li><a href="#x">Careers</a></li>
+        <li><a href="#x">Subscriptions</a></li>
+        <li><a href="#x">Help</a></li>
       </ul>
     </div>
   </footer>

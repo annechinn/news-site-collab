@@ -16,7 +16,7 @@ export default function ShirtPrice(){
 
    return ( 
       <>
-         <img src="https://m.media-amazon.com/images/I/71ijdc+5X+L._AC_AA220_.jpg"/> 
+         <img src="https://m.media-amazon.com/images/I/71ijdc+5X+L._AC_AA220_.jpg" alt=""/> 
          <h1>{quantity * price} </h1>
          <h1> {quantity} </h1>
          <Select options={options} onChange={(event) => {setQuantity(event.value)}} />

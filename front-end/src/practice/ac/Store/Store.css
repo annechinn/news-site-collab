@@ -10,9 +10,8 @@
 }
 
 .cart-item .price-info {
-  width:400px;
   display:grid;
-  grid-template-columns: 1fr 2fr 1fr 1fr;
+  grid-template-columns: 1fr 6fr 1fr 1fr;
 }
 
 .cart-item-buttons :first-child {
@@ -25,11 +24,12 @@
 
 .store {
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .products {
   margin:30px;
-  display:flex;
-  flex-direction:row;
+  display:grid;
+  grid-template-columns: repeat(8, 1fr);
 }
+

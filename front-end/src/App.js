@@ -12,8 +12,6 @@ import ACPage from './practice/ac/ACPage/ACPage';
 import AJpage from './practice/aj/AJpage/AJpage';
 
 export default function App(props) {
-   console.log(props)
-
     return (
         <Router>
             <main>

@@ -25,6 +25,7 @@ function BooksAPI() {
     (async ()=>{
       
       setBooks(await getBooks(genre));
+      
     })();
 
   }, [genre]);
