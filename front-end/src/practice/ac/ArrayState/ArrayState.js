@@ -11,9 +11,9 @@ function ArrayState() {
     </div>
     <Button variant="primary" size="sm" onClick={
       ()=>{
-        //nums.push(5); 
-        //updateNums(nums);
-         updateNums([...nums, 5]);
+        // nums.push(5); 
+        // updateNums(nums);
+        updateNums([...nums, 5]);
         }
       }>Add Number</Button>
     </>

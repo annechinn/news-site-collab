@@ -11,7 +11,7 @@ function BooksAPI() {
 
   useEffect(()=> {
 
-    (async ()=>{
+    ( async ()=>{
 
       const genres = await getGenres();
       setGenreOptions(genres.map(x=>({value: x.list_name_encoded, label:x.display_name})));
@@ -25,15 +25,16 @@ function BooksAPI() {
     (async ()=>{
       
       setBooks(await getBooks(genre));
-      
+
     })();
 
   }, [genre]);
 
+  
   if (books) {
     return (
       <>
-      <div class="select">
+      <div className="select">
         <Select  options={genreOptions} onChange={(selectedOption)=>{
           setGenre(selectedOption.value);
         }}/>

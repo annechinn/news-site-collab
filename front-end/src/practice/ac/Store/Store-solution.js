@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-
 import './Store.css';
 
 async function getProducts() {
@@ -26,7 +25,7 @@ function Product({product, addItemToCart}) {
 function ProductList({products, addItemToCart}) {
   return (
     <div className="products">
-      {products.map(x=><Product product={x} addItemToCart={addItemToCart} />)}
+      {products.map(x=><Product key={x.id} product={x} addItemToCart={addItemToCart}/>)}
     </div>
   )
 }
@@ -69,42 +68,51 @@ function ShoppingCart({cartItems, addItemToCart, removeItemFromCart}) {
 }
 
 function Store() {
-  const [products, updateProducts] = useState([]);
-  const [cartItems, updateCartItems] = useState([]);
+    const [products, updateProducts] = useState([]);
+    const [cartItems, updateCartItems] = useState([]);
 
-  function addItemToCart(item) {
-    let found = cartItems.find(x=>x.product.id === item.id);
-    if (!found) {
-      // create a new one
-      const newCartItem = {product: item, quantity:1};
-      const newCartItemArray = [...cartItems, newCartItem];
-      updateCartItems(newCartItemArray);
+    function addItemToCart(item) {
+      // see if the item is already in the shopping cart items
+      let found = cartItems.find(x=>x.product.id===item.id);
+      if (!found) {
+        // create a new item
+        const newCartItem = {product: item, quantity:1};
+        // use the spread operator to create a shallow copy
+        // of the old array and add our new item to it
+        const newCartItemsArray = [...cartItems, newCartItem];
+        updateCartItems(newCartItemsArray);
+      }
+      else {
+        // update the item
+        found.quantity++;
+        // use map to create a shallow copy of the old array
+        // to trigger a re-render.
+        updateCartItems(cartItems.map(x=>x));
+      }
+      console.log(cartItems);
     }
-    else {
-      found.quantity++;
-      updateCartItems(cartItems.map(x=>x));
+
+    function removeItemFromCart(item) {
+
+      // see if the item is already in the list
+      let found = cartItems.find(x=>x.product.id===item.product.id);
+      if (found.quantity===1) {
+        // we should remove the item from the cart
+        updateCartItems(cartItems.filter(x=>x.product.id!==item.product.id))
+      }
+      else {
+        // decrement the quantity and use map to create a shallow
+        // copy of the array to trigger a re-render.
+        found.quantity--;
+        updateCartItems(cartItems.map(x=>x));
+      }
     }
-    console.log(cartItems);
-  }
-
-  function removeItemFromCart(item) {
-    let found = cartItems.find(x=>x.product.id === item.product.id);
-    if (found.quantity===1) {
-      updateCartItems(cartItems.filter(x=>x.product.id!==item.product.id));
-    }
-    else {
-      found.quantity--;
-      updateCartItems(cartItems.map(x=>x));
-    }
-  }
-
-  useEffect(()=> {
-
-    (async ()=> {
-      updateProducts(await getProducts());
-    })();
-
-  }, []);
+  
+    useEffect(()=> {
+      (async ()=> {
+        updateProducts(await getProducts());
+      })();
+    }, []);
 
     return (
       <>

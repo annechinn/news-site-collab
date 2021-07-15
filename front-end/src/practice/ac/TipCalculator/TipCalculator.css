@@ -1,0 +1,30 @@
+
+.calculator {
+  display: flex;
+  flex-direction:row;
+  background-color: lightslategray;
+  padding:20px;
+}
+
+.calculator :first-child {
+  margin-right:30px;
+}
+
+.tip-amnt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap:10px;
+}
+
+.tip-input > div {
+  margin-bottom:20px;
+}
+
+.tip-output > div {
+  display:flex;
+  justify-content: flex-end;
+}
+
+.label {
+  font-weight:bold;
+}

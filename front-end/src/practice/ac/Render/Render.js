@@ -5,7 +5,7 @@ function GrandParent() {
 
   useEffect(() => {
     console.log("GrandParent: useEffect");
-  }, [count]);
+  },[count]);
 
   return (
     <>
@@ -20,7 +20,7 @@ function Parent() {
 
   useEffect(() => {
     console.log("Parent: useEffect");
-  }, [count]);
+  },[count]);
 
   return (
     <>

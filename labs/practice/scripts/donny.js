@@ -1,6 +1,9 @@
 (()=> {
 
+ function doIt(func){
    
+ }
+ 
 
   
 })();

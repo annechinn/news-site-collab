@@ -18,9 +18,22 @@ async function getBooks (genre) {
 };
 
 
+async function getMovieCritics() {
+  const response = await axios.get(`https://api.nytimes.com/svc/movies/v2//critics/all.json?api-key=${API_KEY}`)
+  return response.data.results;
+}
+
+async function getMovieReviews(critic) {
+  // https://api.nytimes.com/svc/movies/v2/reviews/search.json?reviewer=A.%20O.%20Scott&
+  const response = await axios.get(`https://api.nytimes.com/svc/movies/v2/reviews/search.json?reviewer=${critic}&api-key=${API_KEY}`)
+  return response.data.results;
+}
+
 export {
   getBooks,
   getTopStories,
-  getGenres
+  getGenres,
+  getMovieCritics,
+  getMovieReviews
 }
    
