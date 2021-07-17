@@ -1,7 +1,9 @@
+
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 
 import './App.css';
+
 
 import Header from './containers/Header/Header';
 import Footer from './containers/Footer/Footer';
@@ -9,6 +11,8 @@ import ArticleSection from './containers/ArticleSection/ArticleSection';
 import Article from './components/Article/Article';
 import NYTBooks from './containers/NYTBooks/NYTBooks';
 import ACPage from './practice/ac/ACPage/ACPage';
+import YNPage from './practice/yn/YNPage/YNPage';
+
 
 export default function App(props) {
     return (
@@ -30,6 +34,9 @@ export default function App(props) {
                     </Route>
                     <Route path="/ac-page">
                         <ACPage/>
+                    </Route>
+                    <Route path="/yn-page">
+                        <YNPage/>
                     </Route>
                 </Switch>
                 <Footer/>

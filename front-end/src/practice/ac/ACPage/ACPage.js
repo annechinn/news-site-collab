@@ -7,8 +7,13 @@ import ObjectState from '../ObjectState/ObjectState';
 import NumState from '../NumState/NumState';
 
 function ACPage() {
-  return (
-    <NumState/>
+  return ( 
+  <>
+  <div className="container">
+  <NumState/>
+  </div>
+  </>
+   
   );
 }
 
