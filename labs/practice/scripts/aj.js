@@ -1,11 +1,10 @@
 (()=> {
 
-
-  let log = () => console.log("hello")
-  function doIt(x) {
-return x()
-  }
+  sum= 0
+for (let i =0; i<=10; ++i){
+return sum+=i
+}
   
-  doIt(log)
+
 
 })();

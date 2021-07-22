@@ -1,0 +1,96 @@
+$width: 250px;
+$spacing: 15px;
+$color-red: red;
+$color-black: #021f27;
+$color-light-black: #243135;
+$color-lighter-black: #3a4d52;
+
+body, html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+  background-color: #fafcff;
+  background-image: 
+    radial-gradient(circle, transparent, #afb5bf), 
+    linear-gradient(transparent, #d3d8e0);
+}
+
+.color-picker {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  
+  .shade-selector, 
+  .hue-selector {
+    position: relative;
+    width: $width;
+    margin: $spacing;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 3px;
+    box-shadow: 
+      inset 0 0 1px rgba($color-black, 0.4), 
+      inset 0 0 5px rgba($color-lighter-black, 0.2);
+  }
+  
+  .shade-selector {
+    height: $width;
+    background:
+      linear-gradient(transparent, black),
+      linear-gradient(90deg, white, transparent),
+      linear-gradient(var(--color), var(--color));
+  }
+
+  .hue-selector {
+    height: 8px;
+    background-image: linear-gradient(90deg, red, #ff0, lime, cyan, blue, #f0f, red);
+
+    .pointer {top: 4px}
+  }
+
+  .pointer {
+    position: absolute;
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 5px solid white;
+    transform: translate(-10px, -10px);
+    box-shadow: 0 0 5px rgba(black, 0.2), inset 0 0 5px rgba(black, 0.2);
+    background-color: var(--color);
+  }
+}
+
+.info-box {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 10px 10px;
+
+  div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 50px;
+    font-size: 12px;
+    height: 28px;
+    border: 1px solid rgba(black, 0.1);
+    border-radius: 6px;
+    user-select: all;
+
+    &::before {
+      content: attr(title);
+      position: absolute;
+      top: -18px;
+      font-weight: bold;
+      font-size: 10px;
+    }
+
+    &:first-child {
+      flex-basis: 80px;
+    }
+  }
+}
