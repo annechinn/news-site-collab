@@ -132,7 +132,7 @@ function CardGame() {
     <>
     <div class="game">
       <div>
-        <Button onClick={()=>{updateDeck(buildDeck());}}>Restart Game</Button>
+        <Button onClick={()=>{updateDeck(buildDeck())}}>Restart Game</Button>
       </div>
       <div>{getStatus()}</div>
       <div className="grid">
