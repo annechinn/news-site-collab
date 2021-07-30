@@ -2,6 +2,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import './GitHubAPI.css';
+import Button from 'react-bootstrap/Button';
 
 
 async function getGitHubReposForUserName(username) {
@@ -30,23 +31,31 @@ function RepoList({repos}) {
 }
 
 function GitHubAPI() {
-  const [appState, setAppState] = useState({loaded: false, repos: null});
+  const [loaded, updateLoaded] = useState(false);
+  const [repos, updateRepos] = useState([]);
+  const [username, updateUserName] = useState('');
 
   useEffect(() => {
-    setAppState({ loaded: false });
+    updateLoaded(false);
 
     (async ()=> {
-      const repos = await getGitHubReposForUserName('annechinn');
-      setAppState({ loaded:true, repos: repos });
+      const repos = await getGitHubReposForUserName(username);
+      updateRepos(repos);
+      updateLoaded(true);
     })();
 
-  }, [setAppState]);
+  }, [username]);
 
   return (
-    <>
-      <h1>annechinn Repositories</h1>
+    <> 
+      <input id="username" type="text"></input>
+      <Button variant="primary" size="sm" onClick={
+        ()=>updateUserName(document.getElementById('username').value)
+        }>Submit</Button>
+
+      <h1>{loaded?`${username}: Repositories`:''}</h1>
       <div>
-        {appState.loaded?<RepoList repos={appState.repos}/>:<p>Loading...</p>}
+        {loaded?<RepoList repos={repos}/>:username?<p>Loading...</p>:'Enter username'}
       </div>
     </>
   );
